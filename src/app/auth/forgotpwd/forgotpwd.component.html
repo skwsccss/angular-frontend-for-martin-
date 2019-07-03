@@ -1,0 +1,31 @@
+<div style="text-align: center">
+        <img src="assets/image/logo.jpg" alt="logo" style="width: 300px;">
+</div>
+
+<div class="forgot">
+        <form class="tp-form" (ngSubmit)="submit()">
+                <h2><i class="fa fa-envelope-o"></i> Forgot password</h2>
+            <mat-form-field class="tp-full-width">
+                <input matInput placeholder="Email" [formControl]="emailFormControl">
+                <mat-error *ngIf="emailFormControl.hasError('email') 
+                    && !emailFormControl.hasError('required')">
+                    Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+    
+            <div class="row">
+                <div class="col-sm-12">
+                     <button mat-raised-button color="primary" type="submit"><i class="fa fa-check-square-o"></i> Submit</button>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                    <div class="col-sm-12">
+                        <a [routerLink]="'/login'">Back to Login</a>
+                    </div>
+            </div>
+        </form>
+    </div>
