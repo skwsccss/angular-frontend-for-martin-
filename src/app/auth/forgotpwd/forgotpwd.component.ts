@@ -32,20 +32,20 @@ export class ForgotpwdComponent implements OnInit {
   }
 
   submit(){
-    if (this.email) {
-      this.error = '';
-      this.authService.forgotpassword(this.email).subscribe((res: any) =>{
-        if (res.status) {
-          this.router.navigate(['/resetpwd/' + this.email + '/' + res.token]);
-        }
-        else {
-          this.error = res.message;
-        }
-      });
-    }
-    else {
-      this.error = 'Input correct email address.';
-    }
+    // if (this.email) {
+    //   this.error = '';
+    //   this.authService.forgotpassword(this.email).subscribe((res: any) =>{
+    //     if (res.status) {
+    //       this.router.navigate(['/resetpwd/' + this.email + '/' + res.token]);
+    //     }
+    //     else {
+    //       this.error = res.message;
+    //     }
+    //   });
+    // }
+    // else {
+    //   this.error = 'Input correct email address.';
+    // }
   }
 
 }

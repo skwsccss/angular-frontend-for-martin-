@@ -21,9 +21,12 @@
                 Password is <strong>required</strong>
             </mat-error>
         </mat-form-field>
+        <div class="row mb-3" *ngIf="errMsg!=''">
+            <p class="text-danger m-auto">{{errMsg}}</p>
+        </div>
         <div class="row">
             <div class="col-sm-12">
-                 <button mat-raised-button color="primary" type="submit" [routerLink]="'/contract'"><i class="fa fa-check-square-o"></i> Submit</button>
+                 <button mat-raised-button color="primary" type="submit"><i class="fa fa-check-square-o"></i> Submit</button>
             </div>
         </div>
         <br>
@@ -33,15 +36,5 @@
                 </div>
             
         </div>
-        <!-- <mat-form-field class="tp-full-width">
-                <input matInput placeholder="Email" [formControl]="emailFormControl">
-                <mat-error *ngIf="emailFormControl.hasError('email') 
-                    && !emailFormControl.hasError('required')">
-                    Please enter a valid email address
-                </mat-error>
-                <mat-error *ngIf="emailFormControl.hasError('required')">
-                    Email is <strong>required</strong>
-                </mat-error>
-            </mat-form-field> -->
     </form>
 </div>

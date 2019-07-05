@@ -1,96 +1,96 @@
 <mat-sidenav-container>
-    <mat-sidenav  #sidenav role="navigation">
-     <mat-nav-list>
+  <mat-sidenav #sidenav role="navigation">
+    <mat-nav-list>
       <a mat-list-item>
-        <mat-icon class="icon">input</mat-icon>  
+        <mat-icon class="icon">input</mat-icon>
         <span class="label">Login</span>
       </a>
       <a mat-list-item>
         <mat-icon class="icon">home</mat-icon>
-          <span class="label">Home</span>
+        <span class="label">Home</span>
       </a>
       <a mat-list-item>
         <mat-icon class="icon">dashboard</mat-icon>
         <span class="label">Dashboard</span>
       </a>
-      <a  mat-list-item type="button">
+      <a mat-list-item type="button" (click)="logout()">
         <mat-icon class="icon">output</mat-icon>
         <span class="label">LogOut</span>
       </a>
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-      <mat-toolbar color="primary">
-       <div fxHide.gt-xs>
-         <button mat-icon-button>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <div fxHide.gt-xs>
+        <button mat-icon-button>
           <mat-icon>menu</mat-icon>
         </button>
       </div>
-       <div>
-         <a [routerLink]="'/'">
-            <img src="../../../assets/image/logo.png" alt="logo" width="120">
-         </a>
-       </div>&nbsp;
-       <div fxFlex fxLayout fxLayoutAlign="flex-start" fxHide.xs>
-           <ul fxLayout fxLayoutGap="20px" class="navigation-items">
-               <li>
-                    <a [matMenuTriggerFor]="menu">
-                        admin
-                        <mat-icon class="icon">arrow_drop_down</mat-icon>
-                    </a>
-                    <mat-menu #menu="matMenu">
-                            <a mat-menu-item class="matmenu">Item 1</a>
-                            <a mat-menu-item class="matmenu">Item 2</a>
-                            <a mat-menu-item class="matmenu">Item 3</a>
-                            <a mat-menu-item class="matmenu">Item 4</a>
-                    </mat-menu>
+      <div>
+        <a [routerLink]="'/'">
+          <img src="../../../assets/image/logo.png" alt="logo" width="120">
+        </a>
+      </div>&nbsp;
+      <div fxFlex fxLayout fxLayoutAlign="flex-start" fxHide.xs>
+        <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+          <li>
+            <a [matMenuTriggerFor]="menu">
+              admin
+              <mat-icon class="icon">arrow_drop_down</mat-icon>
+            </a>
+            <mat-menu #menu="matMenu">
+              <a mat-menu-item class="matmenu">Item 1</a>
+              <a mat-menu-item class="matmenu">Item 2</a>
+              <a mat-menu-item class="matmenu">Item 3</a>
+              <a mat-menu-item class="matmenu">Item 4</a>
+            </mat-menu>
 
-               </li>
-               <li>
-                    <a [routerLink]="'/contract'">
-                        Contract
-                        <mat-icon class="icon">library_books</mat-icon>
-                    </a>
-                </li>
-                <li>
-                    <a [routerLink]="'/appendix'">
-                        Appendix
-                        <mat-icon class="icon">list</mat-icon>
-                    </a>
-                </li>
-                
-                <li>
-                    <a [routerLink]="'/invoice'">
-                        Invoice order
-                        <mat-icon class="icon">line_weight</mat-icon>
-                    </a>
-                </li>
-            </ul>
-        
-       </div>
-       <div fxFlex fxLayout fxLayoutAlign="flex-end"  fxHide.sm>
-          <ul fxLayout fxLayoutGap="10px" class="navigation-items">
-              
-              <li>
-                <a >
-                    <mat-icon class="icon">account_circle</mat-icon>
-                    <span class="label">Administrator</span>
-                </a>
-              </li>
-              <li>
-                  <a (click)="openBottomSheet()">
-                      <mat-icon class="icon">vpn_key</mat-icon>&nbsp;
-                  </a>
-                </li>
-              <li>
-                  <a>
-                    <mat-icon class="icon">exit_to_app</mat-icon>&nbsp;
-                   </a>
-              </li>
-          </ul>
-       </div>
-      </mat-toolbar>
-      <main>
-      </main>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+          </li>
+          <li>
+            <a [routerLink]="'/contract'">
+              Contract
+              <mat-icon class="icon">library_books</mat-icon>
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="'/appendix'">
+              Appendix
+              <mat-icon class="icon">list</mat-icon>
+            </a>
+          </li>
+
+          <li>
+            <a [routerLink]="'/invoice'">
+              Invoice order
+              <mat-icon class="icon">line_weight</mat-icon>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+      <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.sm>
+        <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+
+          <li>
+            <a>
+              <mat-icon class="icon">account_circle</mat-icon>
+              <span class="label">Administrator</span>
+            </a>
+          </li>
+          <li>
+            <a (click)="openBottomSheet()">
+              <mat-icon class="icon">vpn_key</mat-icon>&nbsp;
+            </a>
+          </li>
+          <li>
+            <a (click)="logout()">
+              <mat-icon class="icon">exit_to_app</mat-icon>&nbsp;
+            </a>
+          </li>
+        </ul>
+      </div>
+    </mat-toolbar>
+    <main>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
