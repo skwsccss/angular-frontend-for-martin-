@@ -14,8 +14,8 @@ export class AuthService {
   public user: User;
   public token: string;
 
-  private serverUrl = environment.serverUrl;
-
+  private httpOptions: any;
+ 
   constructor(private http: HttpClient, private router: Router) {
 
    }
